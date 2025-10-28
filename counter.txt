@@ -1,0 +1,65 @@
+counter.js
+
+
+import React, { useState } from 'react';
+
+function Counter() {
+  // useState hook for managing the count value
+  const [count, setCount] = useState(0);
+
+  return (
+    <div style={styles.container}>
+      <h1>React Counter</h1>
+      <h2>{count}</h2>
+      <div>
+        <button style={styles.btn} onClick={() => setCount(count + 1)}>Increment</button>
+        <button style={styles.btn} onClick={() => setCount(count - 1)}>Decrement</button>
+      </div>
+    </div>
+  );
+}
+
+// Simple CSS styling
+const styles = {
+  container: {
+    textAlign: 'center',
+    marginTop: '100px',
+    fontFamily: 'Arial, sans-serif'
+  },
+  btn: {
+    margin: '10px',
+    padding: '10px 20px',
+    fontSize: '16px',
+    borderRadius: '5px',
+    border: 'none',
+    backgroundColor: '#007bff',
+    color: 'white',
+    cursor: 'pointer'
+  }
+};
+
+export default Counter;
+
+
+
+app.js
+
+import React from 'react';
+import Counter from './Counter';
+
+function App() {
+  return (
+    <div>
+      <Counter />
+    </div>
+  );
+}
+
+export default App;
+
+
+npx create-react-app my-counter-app
+
+cd my-counter-app
+start app with 
+npm start

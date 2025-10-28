@@ -1,0 +1,82 @@
+profilecard.js
+ 
+
+import React from 'react';
+
+// Functional component that uses props
+function ProfileCard(props) {
+  return (
+    <div style={styles.card}>
+      <img src={props.image} alt={props.name} style={styles.image} />
+      <h2>{props.name}</h2>
+      <p>{props.email}</p>
+    </div>
+  );
+}
+
+// Simple inline styles
+const styles = {
+  card: {
+    border: '1px solid #ddd',
+    borderRadius: '10px',
+    padding: '20px',
+    width: '250px',
+    textAlign: 'center',
+    boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+    margin: '15px',
+    fontFamily: 'Arial, sans-serif',
+  },
+  image: {
+    width: '100px',
+    height: '100px',
+    borderRadius: '50%',
+    objectFit: 'cover',
+  },
+};
+
+export default ProfileCard;
+
+
+
+app.js
+
+import React from 'react';
+import ProfileCard from './ProfileCard';
+
+function App() {
+  return (
+    <div style={styles.container}>
+      <h1>User Profile Cards</h1>
+      <div style={styles.cardContainer}>
+        <ProfileCard
+          name="Parth Ambre"
+          email="parth.ambre@example.com"
+          image="https://randomuser.me/api/portraits/men/32.jpg"
+        />
+
+        <ProfileCard
+          name="Sneha Sharma"
+          email="sneha.sharma@example.com"
+          image="https://randomuser.me/api/portraits/women/44.jpg"
+        />
+      </div>
+    </div>
+  );
+}
+
+const styles = {
+  container: {
+    textAlign: 'center',
+    marginTop: '50px',
+  },
+  cardContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+  },
+};
+
+export default App;
+
+
+start the app

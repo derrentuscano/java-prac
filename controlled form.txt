@@ -1,0 +1,92 @@
+controlledform.js
+
+import React, { useState } from 'react';
+
+function ControlledForm() {
+  // Step 1: Create state variables for first and last name
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+
+  // Step 2: Update states using onChange
+  const handleFirstNameChange = (e) => {
+    setFirstName(e.target.value);
+  };
+
+  const handleLastNameChange = (e) => {
+    setLastName(e.target.value);
+  };
+
+  return (
+    <div style={styles.container}>
+      <h1>Controlled Form Example</h1>
+
+      {/* Step 3: Controlled Input Fields */}
+      <form style={styles.form}>
+        <label>
+          First Name:
+          <input
+            type="text"
+            value={firstName}
+            onChange={handleFirstNameChange}
+            style={styles.input}
+          />
+        </label>
+        <br />
+
+        <label>
+          Last Name:
+          <input
+            type="text"
+            value={lastName}
+            onChange={handleLastNameChange}
+            style={styles.input}
+          />
+        </label>
+      </form>
+
+      {/* Step 4: Live message */}
+      <h2 style={styles.greeting}>
+        Hello, {firstName} {lastName}
+      </h2>
+    </div>
+  );
+}
+
+const styles = {
+  container: {
+    textAlign: 'center',
+    marginTop: '80px',
+    fontFamily: 'Arial, sans-serif',
+  },
+  form: {
+    marginBottom: '20px',
+  },
+  input: {
+    margin: '10px',
+    padding: '8px',
+    fontSize: '16px',
+    borderRadius: '5px',
+    border: '1px solid #ccc',
+  },
+  greeting: {
+    color: '#007bff',
+  },
+};
+
+export default ControlledForm;
+
+app.js
+
+
+import React from 'react';
+import ControlledForm from './ControlledForm';
+
+function App() {
+  return (
+    <div>
+      <ControlledForm />
+    </div>
+  );
+}
+
+export default App;

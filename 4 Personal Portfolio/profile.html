@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Derren Tuscano - Portfolio</title>
+
+  <style>
+    /* ---------- Base Styles ---------- */
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    nav {
+      background: #333;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #007bff;
+    }
+
+    .container {
+      width: 80%;
+      margin: 30px auto;
+    }
+
+    section {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #007bff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #333;
+      color: white;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* ---------- Dark Mode Styles ---------- */
+    .dark-mode {
+      background-color: #121212;
+      color: #f4f4f4;
+    }
+
+    .dark-mode header {
+      background-color: #222;
+    }
+
+    .dark-mode nav {
+      background-color: #222;
+    }
+
+    .dark-mode section {
+      background-color: #1e1e1e;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+
+    .dark-mode footer {
+      background-color: #222;
+    }
+
+    /* ---------- Dark Mode Button ---------- */
+    #darkModeToggle {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    #darkModeToggle:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Derren Tuscano</h1>
+    <p>Web Developer | Programmer | Tech Enthusiast</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <button id="darkModeToggle">Toggle Dark Mode</button>
+
+  <div class="container">
+    <section id="home">
+      <h2>Home</h2>
+      <p>Welcome to my personal portfolio website! I’m passionate about web development, programming, and creating innovative solutions.</p>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Hello! I'm <strong>Derren Tuscano</strong>, a web developer and coder who loves building interactive and user-friendly websites. I enjoy learning new technologies and improving my skills every day.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li>💻 To-Do List App (HTML, CSS, JS)</li>
+        <li>🧮 Employee Management System (Java)</li>
+        <li>🌐 Portfolio Website (HTML, CSS, JS)</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:derrentuscano1@gmail.com">derrentuscano1@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/derrentuscano" target="_blank">linkedin.com/in/derrentuscano</a></p>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2025 Derren Tuscano | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    const toggleButton = document.getElementById("darkModeToggle");
+    toggleButton.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+    });
+  </script>
+</body>
+</html>

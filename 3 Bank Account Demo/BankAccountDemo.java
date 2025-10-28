@@ -1,0 +1,50 @@
+// Custom checked exception
+class InsufficientFundsException extends Exception {
+    public InsufficientFundsException(String message) {
+        super(message);
+    }
+}
+
+// BankAccount class
+class BankAccount {
+    private double balance;
+
+    public BankAccount(double initialBalance) {
+        this.balance = initialBalance;
+    }
+
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println("Deposited: ₹" + amount);
+    }
+
+    public void withdraw(double amount) throws InsufficientFundsException {
+        if (amount > balance) {
+            throw new InsufficientFundsException("Error: Insufficient funds! Available balance: ₹" + balance);
+        }
+        balance -= amount;
+        System.out.println("Withdrawn: ₹" + amount);
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+}
+
+// Main class
+public class BankAccountDemo {
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount(5000.0);
+
+        try {
+            account.deposit(2000);
+            account.withdraw(4000); // valid
+            account.withdraw(4000); // will trigger exception
+        } catch (InsufficientFundsException e) {
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("Final Balance: ₹" + account.getBalance());
+    }
+}
+
